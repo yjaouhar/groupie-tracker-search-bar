@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">   
+    <link rel="stylesheet" href="/style/style.css">
+    <title>groupie-tracker</title>
+</head>
+<body>
+   
+    <div class="H1">
+     <center><h1 class="h1">Groupie-Tracker</h1></center>
+    <form action="">
+            <input name="art" list="art" placeholder="Search for an artist">
+            <datalist id="art">
+                {{range .}}
+                <option value="{{.Name}}">{{.Name}}</option>
+                {{end}}
+            </datalist>
+            <input type="submit">
+        </form>
+  
+    </div>
+    <div class="art">
+    {{range .}}
+        <div class="sh">
+            <center>
+        <img src="{{.Image}}" alt="artist" class="img">
+        <form action="/artist/{{.ID}}" method="post">
+            <input type="submit"  value="{{.Name}}" class="submet">   
+        </form>  
+    </center>
+    </div>
+    {{end}}
+          
+    </div>  
+  
+</body>
+</html>

@@ -1,0 +1,190 @@
+body{
+    background-image: url(/style/23343_show_1279x840_hero.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-position: bottom;
+   
+    
+}
+#bo{
+    background-image: none;
+    background-color: rgb(153, 155, 155);
+}
+#backgraound{
+    background-image: url(/style/background.png.jpg);
+}
+.H1{
+     height:7vh;
+}
+.h1{
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 2px 2px rgb(109, 109, 109);
+    text-align: center;
+    font-size: 6vh;
+    font-family: "Protest Guerrilla", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    position: fixed; 
+    top: 0; 
+    left: 40vw;
+}
+
+.art{
+    width:90%;
+    height: 67vh;
+    border-radius: 5px;
+    padding-top: 4vh;
+    padding-left: 4%;
+    overflow: scroll;
+   overflow-x: hidden;
+    position: sticky;
+    background-color: rgb(213, 213, 213);
+    position: fixed;
+    top: 15%;
+    left: 2.5%;
+border: solid 7px rgb(198, 196, 196);
+box-shadow: 10px 10px 40px 10px black;
+ 
+
+  
+}
+.img{
+    background-color: black;
+    background-color: rgb(78, 224, 235);
+    width: 10vw;
+    height: 80%;
+    border: solid 4px rgb(78, 224, 235);
+    border-radius: 100%;
+  
+ 
+
+
+}
+.sh{
+    margin-bottom: 8%;
+    margin-right: 7.2%;
+     display: inline-flex;
+
+
+}
+.submet{
+    background-color: rgb(135, 240, 247);
+    font-size:90%;
+    font-family: "Nosifer", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-top: 2vh;
+  cursor: pointer;
+}
+.bk{
+    width: 99.4%;
+    background-color: rgb(106, 230, 205);
+    border: solid 4px rgb(79, 95, 101);
+}
+.bord2{
+    width: 100%;
+}
+.ar{
+    width:140px;
+    height: 140px;
+    border-radius: 100%;
+    border: solid 5px rgb(251, 251, 251);
+}
+
+.hr{
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 2px 2px rgb(109, 109, 109);
+    text-align: center;
+    font-size: 50px;
+    font-family: "Nosifer", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.mem{
+    width: 100%;
+    display: inline-flex;
+    margin-right: 10px;
+}
+   details {
+    margin-bottom: 50px;
+    width: 100%;  
+}
+.members{
+    cursor: pointer;
+    font-family: "Protest Guerrilla", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  font-size: 25px;
+    color: rgb(0, 0, 0);
+    width: 100%;
+    text-align: center;
+    list-style:none;
+}
+ul {
+    text-align: center;
+  font-size: large;
+  font-weight: bold;
+    padding-left: 20px;
+    list-style: none;
+}
+.Back{
+    background-color: rgb(106, 230, 205);
+    width:10%;
+    text-align: center;
+    border: solid 2px;
+    position: fixed;
+    bottom: 20px;
+    left: 45%;
+}
+
+.a{
+    font-size: 50px;
+    text-decoration: none;
+    font-weight: bolder;
+    color: black;
+}
+.code{
+    font-size: 10vw;
+    color: rgb(0, 0, 0);
+    font-family: "Nosifer", sans-serif;
+    margin-bottom: 5vh;
+    margin-top: 6vh;
+    text-shadow: 20px 4px 8px rgb(44, 44, 44);
+}
+.message{
+    font-size: 5vw;
+    color: rgb(0, 0, 0);
+    margin-top: 0;
+    margin-bottom: 15vh;
+    font-family: "Nosifer", sans-serif;
+    text-shadow: 10px 4px 10px rgb(44, 44, 44);
+}
+
+.back{
+   background-color:rgb(175, 187, 187);
+   border: solid 6px rgb(106, 103, 103);
+   border-radius: 30px;
+    font-size: 5vw;
+    color: rgb(0, 0, 0);
+    font-family: "Protest Guerrilla", sans-serif;
+    text-decoration: none;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+
+.back:hover{
+    border-color:rgb(65, 233, 231);
+    background-color: rgb(179, 255, 255);
+}
+.members:hover{
+    color: rgb(187, 187, 199);
+}
+
+.submet:hover{
+    background-color: rgb(116, 120, 120);
+}
+.a:hover{
+   color: rgb(130, 126, 126);
+}
