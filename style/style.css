@@ -15,19 +15,43 @@ body{
     background-image: url(/style/background.png.jpg);
 }
 .H1{
-     height:7vh;
+    background-color: rgb(213, 213, 213);
+    width: 93%;
+     height:10vh;
+     border-radius: 40px ;
+     margin-left: 3%;
+    
 }
 .h1{
     color: rgb(0, 0, 0);
     text-shadow: 2px 2px 2px rgb(109, 109, 109);
-    text-align: center;
     font-size: 6vh;
     font-family: "Protest Guerrilla", sans-serif;
     font-weight: 100;
     font-style: normal;
-    position: fixed; 
-    top: 0; 
-    left: 40vw;
+    margin-left: 3%;
+    padding-top: 0.5%;
+   
+}
+.inp{
+    /* background-color: red; */
+    border-radius: 40px;
+    padding-left: 1%;
+    width: 30%;
+    height: 40px;
+    position: fixed;
+    top: 7%;
+    right: 35%;
+}
+.serch{
+    font-size: 2vw;
+    border: none;
+    background: none;
+    position: fixed;
+    top: 7%;
+    right: 32%;
+
+
 }
 
 .art{
@@ -187,4 +211,8 @@ ul {
 }
 .a:hover{
    color: rgb(130, 126, 126);
+}
+.serch:hover{
+    filter:contrast(200%) ;
+
 }

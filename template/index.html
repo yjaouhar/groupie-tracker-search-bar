@@ -13,15 +13,15 @@
 <body>
    
     <div class="H1">
-     <center><h1 class="h1">Groupie-Tracker</h1></center>
+     <h1 class="h1">Groupie-Tracker</h1>
     <form action="">
-            <input name="art" list="art" placeholder="Search for an artist">
+            <input class="inp" name="art" list="art" placeholder="Search for an artist">
             <datalist id="art">
                 {{range .}}
                 <option value="{{.Name}}">{{.Name}}</option>
                 {{end}}
             </datalist>
-            <input type="submit">
+            <input class="serch"  type="submit" value="🔍">
         </form>
   
     </div>
