@@ -1,7 +1,6 @@
 package groupie
 
 import (
-	"fmt"
 	"html/template"
 	"net/http"
 )
@@ -23,7 +22,7 @@ func Home(w http.ResponseWriter, r *http.Request) {
 		Error(w, http.StatusInternalServerError)
 		return
 	}
-	
+
 	temp, err := template.ParseFiles("template/index.html")
 	if err != nil {
 		Error(w, http.StatusInternalServerError)
