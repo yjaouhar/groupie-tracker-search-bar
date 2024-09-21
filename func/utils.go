@@ -1,6 +1,5 @@
 package groupie
 
-
 var (
 	Artist      Artists
 	Location    Locations
@@ -9,11 +8,12 @@ var (
 	Cards       Card
 	Fetched     bool
 	Id          int
-	Isfetched bool
+	Isfetched   bool
+	Mok         blasa
 )
 
 type Err struct {
-	Status int
+	Status  int
 	Message string
 }
 
@@ -24,6 +24,15 @@ type Artists []struct {
 	Members      []string `json:"members"`
 	CreationDate int      `json:"creationDate"`
 	FirstAlbum   string   `json:"firstAlbum"`
+	Loco         []string 
+}
+
+type blasa struct {
+	Index []struct {
+		//ID        int      `json:"id"`
+		Locations []string `json:"locations"`
+		//Dates     string   `json:"dates"`
+	} `json:"index"`
 }
 
 type Locations struct {
@@ -44,6 +53,7 @@ type Card struct {
 		Members      []string `json:"members"`
 		CreationDate int      `json:"creationDate"`
 		FirstAlbum   string   `json:"firstAlbum"`
+		Loco         []string 
 	}
 	Loca Locations
 	Conc ConcertDates

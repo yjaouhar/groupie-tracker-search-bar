@@ -17,18 +17,23 @@
     <div class="H1">
         <h1 class="h1">Groupie-Tracker</h1>
         <form action="">
-            <input class="inp" name="art"  list="art" placeholder="Search for an artist">
+            <input class="inp" name="art" list="art" placeholder="Search for an artist">
             <datalist id="art">
                 {{range .}}
-                <option value="{{.Name}}">{{.Name}}</option>
-                <option value="{{.Members}}">{{.Members}}</option>
-                <option value="{{.FirstAlbum}}">{{.FirstAlbum}}</option>
-                <option value="{{.CreationDate}}">{{.CreationDate}}</option>
+                <option value="{{.Name}}">{{.Name}} - artist/band</option>
+                {{range .Members}}
+                <option value="{{.}}">{{.}} - member</option>
+                {{end}}
+                <option value="{{.FirstAlbum}}">{{.FirstAlbum}} - first album</option>
+                <option value="{{.CreationDate}}">{{.CreationDate}} - creation date</option>
+                {{range .Loco}}
+                <option value="{{.}}">{{.}} - location</option>
+                {{end}}
                 {{end}}
             </datalist>
             <input class="serch" type="submit" value="🔍">
         </form>
-        
+
 
     </div>
     <div class="art">
