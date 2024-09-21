@@ -10,6 +10,7 @@ var (
 	Id          int
 	Isfetched   bool
 	Mok         blasa
+	Result      jdak
 )
 
 type Err struct {
@@ -24,7 +25,36 @@ type Artists []struct {
 	Members      []string `json:"members"`
 	CreationDate int      `json:"creationDate"`
 	FirstAlbum   string   `json:"firstAlbum"`
-	Loco         []string 
+	Loco         []string
+}
+type mok []struct {
+	ID           int      `json:"id"`
+	Image        string   `json:"image"`
+	Name         string   `json:"name"`
+	Members      []string `json:"members"`
+	CreationDate int      `json:"creationDate"`
+	FirstAlbum   string   `json:"firstAlbum"`
+	Loco         []string
+}
+type jdak struct{
+	Tbn  []struct {
+		ID           int      `json:"id"`
+		Image        string   `json:"image"`
+		Name         string   `json:"name"`
+		Members      []string `json:"members"`
+		CreationDate int      `json:"creationDate"`
+		FirstAlbum   string   `json:"firstAlbum"`
+		Loco         []string
+	}
+	Mok []struct {
+		ID           int      `json:"id"`
+		Image        string   `json:"image"`
+		Name         string   `json:"name"`
+		Members      []string `json:"members"`
+		CreationDate int      `json:"creationDate"`
+		FirstAlbum   string   `json:"firstAlbum"`
+		Loco         []string
+	}
 }
 
 type blasa struct {
@@ -53,7 +83,7 @@ type Card struct {
 		Members      []string `json:"members"`
 		CreationDate int      `json:"creationDate"`
 		FirstAlbum   string   `json:"firstAlbum"`
-		Loco         []string 
+		Loco         []string
 	}
 	Loca Locations
 	Conc ConcertDates

@@ -23,7 +23,7 @@ func Fetch(s, id string) bool {
 	}
 	// Unmarshal the JSON data into the appropriate variable based on the type of data requested.
 	if s == "artists" {
-		err = json.Unmarshal(data, &Artist)
+		err = json.Unmarshal(data, &Result.Tbn)
 	} else if s == "locations" {
 		err = json.Unmarshal(data, &Cards.Loca)
 	} else if s == "dates" {

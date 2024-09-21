@@ -31,6 +31,8 @@ for i, v := range Mok.Index {
 		Error(w, http.StatusInternalServerError)
 		return
 	}
+	
+	Result.Mok = Result.Tbn
 	// Execute the parsed template and write it to the response writer.
-	ExecuteTemplate(temp, "artist", w, nil, 0)
+	ExecuteTemplate(temp, "alo", w, nil, 0)
 }

@@ -2,45 +2,58 @@ package groupie
 
 import (
 	"fmt"
+	"html/template"
 	"net/http"
 	"strconv"
 	"strings"
 )
 
 func Search(w http.ResponseWriter, r *http.Request) {
-	x := r.URL.Query()
-	sl := []int{}
-	
-	fmt.Println(x["art"])
+	Result.Mok = nil
+	x := r.URL.Query().Get("art")
+	if x == "" {
+		Error(w, 400)
+		return
+	}
+	fmt.Println(x)
 	for i, v := range Artist {
-		
-		// sls := []interface{}{}
-		// sls = append(sls, v.Members,v.Loco)
-		if strings.Contains(strings.ToLower(v.Name), strings.ToLower(x["art"][0])) {
-			sl = append(sl, i+1)
+		if strings.Contains(strings.ToLower(v.Name), strings.ToLower(x)) {
+			Result.Mok = append(Result.Mok, Artist[i])
 			continue
-		} else if strings.Contains(strings.ToLower(v.FirstAlbum), strings.ToLower(x["art"][0]))  {
-			sl = append(sl, i+1)
+		} else if strings.Contains(strings.ToLower(v.FirstAlbum), strings.ToLower(x)) {
+			Result.Mok = append(Result.Mok, Artist[i])
 			continue
-		}else if  strings.Contains(strings.ToLower(strconv.Itoa(v.CreationDate)), strings.ToLower(x["art"][0])){
-			sl = append(sl, i+1)
+		} else if strings.Contains(strings.ToLower(strconv.Itoa(v.CreationDate)), strings.ToLower(x)) {
+			Result.Mok = append(Result.Mok, Artist[i])
 			continue
-		}else {
+		} else {
+			found := false
 			for _, mem := range v.Members {
-				if strings.Contains(strings.ToLower(mem), strings.ToLower(x["art"][0])) {
-					sl = append(sl, i+1)
+				if strings.Contains(strings.ToLower(mem), strings.ToLower(x)) {
+					Result.Mok = append(Result.Mok, Artist[i])
+					found = true
 					break
 				}
 			}
-			if len(sl) != 0 {
+			if !found {
 				for _, lo := range v.Loco {
-					if strings.Contains(strings.ToLower(lo), strings.ToLower(x["art"][0])) {
-						sl = append(sl, i+1)
+					if strings.Contains(strings.ToLower(lo), strings.ToLower(x)) {
+						Result.Mok = append(Result.Mok, Artist[i])
 						break
 					}
 				}
 			}
 		}
 	}
-	fmt.Println(sl)
+	if len(Result.Mok) == 0 {
+		Error(w,404)
+		return
+	} 
+	temp, err := template.ParseFiles("template/index.html")
+	if err != nil {
+		Error(w, http.StatusInternalServerError)
+		return
+	}
+	// Execute the parsed template and write it to the response writer.
+	ExecuteTemplate(temp, "alo", w, nil, 0)
 }
