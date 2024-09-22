@@ -20,7 +20,7 @@
             <input class="inp" name="art" list="art" placeholder="Search for an artist" required>
             <datalist id="art">
                 {{range .Tbn}}
-                <option value="{{.Name}}">{{.Name}} - artist/band</option>
+                <option value="{{.Name}} - artist/band">{{.Name}} </option>
                 {{range .Members}}
                 <option value="{{.}}"> {{.}} - member</option>
                 {{end}}

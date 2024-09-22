@@ -10,14 +10,18 @@ import (
 func ExecuteTemplate(temp *template.Template, s string, w http.ResponseWriter, info interface{}, status int) {
 	var buf bytes.Buffer // Buffer to hold the rendered template content temporarily
 	var err error
-	if s == "alo"{
+	if s == "alo" {
+		// Result = Result{
+		// 	mp
+		// }
+		
 		err = temp.Execute(&buf, Result)
 		if err != nil {
 			Error(w, http.StatusInternalServerError)
 			return
 		}
 		temp.Execute(w, Result)
-	
+
 	} else if s == "err" {
 		err = temp.Execute(&buf, info)
 		if err != nil {

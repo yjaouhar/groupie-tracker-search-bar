@@ -55,6 +55,9 @@ type jdak struct{
 		FirstAlbum   string   `json:"firstAlbum"`
 		Loco         []string
 	}
+	F struct{
+		Mp map[string]bool
+	}
 }
 
 type blasa struct {

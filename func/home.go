@@ -1,6 +1,7 @@
 package groupie
 
 import (
+	"fmt"
 	"html/template"
 	"net/http"
 )
@@ -22,16 +23,17 @@ func Home(w http.ResponseWriter, r *http.Request) {
 		Error(w, http.StatusInternalServerError)
 		return
 	}
-for i, v := range Mok.Index {
-	Result.Tbn[i].Loco= v.Locations
-}
+	for i, v := range Mok.Index {
+		Result.Tbn[i].Loco = v.Locations
+	}
 
 	temp, err := template.ParseFiles("template/index.html")
 	if err != nil {
+		fmt.Println(err)
 		Error(w, http.StatusInternalServerError)
 		return
 	}
-	
+
 	Result.Mok = Result.Tbn
 	// Execute the parsed template and write it to the response writer.
 	ExecuteTemplate(temp, "alo", w, nil, 0)

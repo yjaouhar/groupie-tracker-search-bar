@@ -19,12 +19,15 @@ func Search(w http.ResponseWriter, r *http.Request) {
 	for i, v := range Result.Tbn {
 		if strings.Contains(strings.ToLower(v.Name), strings.ToLower(x)) {
 			Result.Mok = append(Result.Mok, Result.Tbn[i])
+			fmt.Println(v.Name)
 			continue
 		} else if strings.Contains(strings.ToLower(v.FirstAlbum), strings.ToLower(x)) {
 			Result.Mok = append(Result.Mok, Result.Tbn[i])
+			fmt.Println(v.FirstAlbum)
 			continue
 		} else if strings.Contains(strings.ToLower(strconv.Itoa(v.CreationDate)), strings.ToLower(x)) {
 			Result.Mok = append(Result.Mok, Result.Tbn[i])
+			fmt.Println(v.CreationDate)
 			continue
 		} else {
 			found := false
