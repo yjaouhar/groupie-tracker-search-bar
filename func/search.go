@@ -16,21 +16,21 @@ func Search(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	fmt.Println(x)
-	for i, v := range Artist {
+	for i, v := range Result.Tbn {
 		if strings.Contains(strings.ToLower(v.Name), strings.ToLower(x)) {
-			Result.Mok = append(Result.Mok, Artist[i])
+			Result.Mok = append(Result.Mok, Result.Tbn[i])
 			continue
 		} else if strings.Contains(strings.ToLower(v.FirstAlbum), strings.ToLower(x)) {
-			Result.Mok = append(Result.Mok, Artist[i])
+			Result.Mok = append(Result.Mok, Result.Tbn[i])
 			continue
 		} else if strings.Contains(strings.ToLower(strconv.Itoa(v.CreationDate)), strings.ToLower(x)) {
-			Result.Mok = append(Result.Mok, Artist[i])
+			Result.Mok = append(Result.Mok, Result.Tbn[i])
 			continue
 		} else {
 			found := false
 			for _, mem := range v.Members {
 				if strings.Contains(strings.ToLower(mem), strings.ToLower(x)) {
-					Result.Mok = append(Result.Mok, Artist[i])
+					Result.Mok = append(Result.Mok, Result.Tbn[i])
 					found = true
 					break
 				}
@@ -38,7 +38,7 @@ func Search(w http.ResponseWriter, r *http.Request) {
 			if !found {
 				for _, lo := range v.Loco {
 					if strings.Contains(strings.ToLower(lo), strings.ToLower(x)) {
-						Result.Mok = append(Result.Mok, Artist[i])
+						Result.Mok = append(Result.Mok, Result.Tbn[i])
 						break
 					}
 				}

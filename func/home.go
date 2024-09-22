@@ -23,7 +23,7 @@ func Home(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 for i, v := range Mok.Index {
-	Artist[i].Loco= v.Locations
+	Result.Tbn[i].Loco= v.Locations
 }
 
 	temp, err := template.ParseFiles("template/index.html")

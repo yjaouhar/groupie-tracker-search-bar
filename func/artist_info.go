@@ -29,7 +29,7 @@ func ArtistInfo(w http.ResponseWriter, r *http.Request) {
 	for key := range Cards.Rela.Relation {
 		delete(Cards.Rela.Relation, key)
 	}
-	Cards.Art = Artist[IDa-1]
+	Cards.Art = Result.Tbn[IDa-1]
 	if !Fetch("locations", "/"+id) {
 		Error(w, http.StatusInternalServerError)
 		return
