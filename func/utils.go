@@ -11,6 +11,7 @@ var (
 	Isfetched   bool
 	Mok         blasa
 	Result      jdak
+	Fu = make( map[string]interface{})
 )
 
 type Err struct {
@@ -36,8 +37,8 @@ type mok []struct {
 	FirstAlbum   string   `json:"firstAlbum"`
 	Loco         []string
 }
-type jdak struct{
-	Tbn  []struct {
+type jdak struct {
+	Tbn []struct {
 		ID           int      `json:"id"`
 		Image        string   `json:"image"`
 		Name         string   `json:"name"`
@@ -55,16 +56,19 @@ type jdak struct{
 		FirstAlbum   string   `json:"firstAlbum"`
 		Loco         []string
 	}
-	F struct{
-		Mp map[string]bool
+	 aloo struct {
+		Index []struct {
+			Mapio map[string][]string `json:"datesLocations"`
+		} `json:"index"`
 	}
+	
 }
 
 type blasa struct {
 	Index []struct {
-		//ID        int      `json:"id"`
+		// ID        int      `json:"id"`
 		Locations []string `json:"locations"`
-		//Dates     string   `json:"dates"`
+		// Dates     string   `json:"dates"`
 	} `json:"index"`
 }
 
@@ -94,3 +98,8 @@ type Card struct {
 }
 
 const Url = "https://groupietrackers.herokuapp.com/api/"
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////:
+
+
+

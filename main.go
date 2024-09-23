@@ -9,14 +9,16 @@ import (
 )
 
 func main() {
-	//var mo interface{}
-	groupie.Isfetched = groupie.Fetch("artists", "")
-	groupie.Isfetched = groupie.Fetch("location", "s")
+	// var mo interface{}
+	groupie.Isfetched = groupie.Fetch("artists")
+	groupie.Isfetched = groupie.Fetch("relation")
+	groupie.Uni()
+	fmt.Println(groupie.Fu)
 	http.HandleFunc("/search", groupie.Search)
 	http.HandleFunc("/style/{file}", groupie.Style)
 	http.HandleFunc("/", groupie.Home)
 	http.HandleFunc("/artist/{id}", groupie.ArtistInfo)
-	//http.Handle("hh", mo)
+	// http.Handle("hh", mo)
 	fmt.Println("http://localhost:8082")
 	log.Fatal(http.ListenAndServe(":8082", nil))
 }
