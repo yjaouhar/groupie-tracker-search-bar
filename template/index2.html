@@ -51,34 +51,36 @@
                     </ul>
                 </details>
                 {{end}}
-                {{range $location , $dates := .Mapi}}
+               
                 <details>
+                   
                     <summary class="members">locations</summary>
                     <ul>
-
-
+                        {{range $location , $dates := .Mapi}}
                         <li>{{$location}}</li>
-
+                        {{end}}
                     </ul>
-                </details>
-
+                </details>  
+              
+               
                 <details>
                     <summary class="members">concertDates</summary>
-                    <ul>
-                        {{range $dates}}
+                    <ul>{{range $location , $d := .Mapi}}
+                        {{range $d}}
                         <li>{{.}}</li>
+                        {{end}}
                         {{end}}
                     </ul>
                 </details>
-
-
+                
+                
                 <details>
                     <summary class="members">relations</summary>
                     <ul>
-
-                        <li>{{$location}}
+                        {{range $l , $dd := .Mapi}}
+                        <li>{{$l}}
                             <ul>
-                                {{range $dates}}
+                                {{range $dd}}
                                 <li>{{.}}</li>
                                 {{end}}
                             </ul>

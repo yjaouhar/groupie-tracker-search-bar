@@ -34,6 +34,7 @@ func ExecuteTemplate(temp *template.Template, s string, w http.ResponseWriter, i
 			Tbn:  Result.Tbn[status-1 : status],
 			Mapi: Result.Aloo.Index[status-1].Mapio,
 		}
+		fmt.Println(Sus.Mapi)
 		err = temp.Execute(&buf, Sus)
 		if err != nil {
 			
