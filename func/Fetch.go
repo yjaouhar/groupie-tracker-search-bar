@@ -25,7 +25,7 @@ func Fetch(s string) bool {
 	if s == "artists" {
 		err = json.Unmarshal(data, &Result.Tbn)
 	} else if s == "relation" {
-		err = json.Unmarshal(data, &Result.aloo.Index)
+		err = json.Unmarshal(data, &Result.Aloo)
 	}
 	if err != nil {
 		return false

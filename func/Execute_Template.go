@@ -2,6 +2,7 @@ package groupie
 
 import (
 	"bytes"
+	"fmt"
 	"html/template"
 	"net/http"
 )
@@ -11,12 +12,9 @@ func ExecuteTemplate(temp *template.Template, s string, w http.ResponseWriter, i
 	var buf bytes.Buffer // Buffer to hold the rendered template content temporarily
 	var err error
 	if s == "alo" {
-		// Result = Result{
-		// 	mp
-		// }
-		
 		err = temp.Execute(&buf, Result)
 		if err != nil {
+			fmt.Println(err)
 			Error(w, http.StatusInternalServerError)
 			return
 		}

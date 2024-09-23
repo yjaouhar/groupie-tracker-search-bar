@@ -21,15 +21,21 @@
             <datalist id="art">
                 {{range .Tbn}}
                 <option value="{{.Name}} - artist/band">{{.Name}} </option>
-                {{range .Members}}
-                <option value="{{.}}"> {{.}} - member</option>
+                
+               
                 {{end}}
+                {{range .Aloo.Index}}
+                {{ range $key, $value := .Mapio }}
+                 <option value="{{$key}}"> {{$key}} </option>
+                 {{end}}
+                 {{end}}
+                 {{range .Tbn}}
                 <option value="{{.FirstAlbum}}"> {{.FirstAlbum}} - first album</option>
                 <option value="{{.CreationDate}}">{{.CreationDate}} - creation date</option>
-                {{range .Loco}}
-                <option value="{{.}}">{{.}} - location</option>
                 {{end}}
-                {{end}}
+                
+               
+               
             </datalist>
             <input class="serch" type="submit" value="🔍">
         </form>

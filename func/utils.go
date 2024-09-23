@@ -37,32 +37,7 @@ type mok []struct {
 	FirstAlbum   string   `json:"firstAlbum"`
 	Loco         []string
 }
-type jdak struct {
-	Tbn []struct {
-		ID           int      `json:"id"`
-		Image        string   `json:"image"`
-		Name         string   `json:"name"`
-		Members      []string `json:"members"`
-		CreationDate int      `json:"creationDate"`
-		FirstAlbum   string   `json:"firstAlbum"`
-		Loco         []string
-	}
-	Mok []struct {
-		ID           int      `json:"id"`
-		Image        string   `json:"image"`
-		Name         string   `json:"name"`
-		Members      []string `json:"members"`
-		CreationDate int      `json:"creationDate"`
-		FirstAlbum   string   `json:"firstAlbum"`
-		Loco         []string
-	}
-	 aloo struct {
-		Index []struct {
-			Mapio map[string][]string `json:"datesLocations"`
-		} `json:"index"`
-	}
-	
-}
+
 
 type blasa struct {
 	Index []struct {
@@ -103,3 +78,29 @@ const Url = "https://groupietrackers.herokuapp.com/api/"
 
 
 
+type jdak struct {
+	Tbn []struct {
+		ID           int      `json:"id"`
+		Image        string   `json:"image"`
+		Name         string   `json:"name"`
+		Members      []string `json:"members"`
+		CreationDate int      `json:"creationDate"`
+		FirstAlbum   string   `json:"firstAlbum"`
+		Loco         []string
+	}
+	Mok []struct {
+		ID           int      `json:"id"`
+		Image        string   `json:"image"`
+		Name         string   `json:"name"`
+		Members      []string `json:"members"`
+		CreationDate int      `json:"creationDate"`
+		FirstAlbum   string   `json:"firstAlbum"`
+		Loco         []string
+	}
+	 Aloo struct {
+		Index []struct {
+			Mapio map[string][]string `json:"datesLocations"`
+		} `json:"index"`
+	}
+	
+}

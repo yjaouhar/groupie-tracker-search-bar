@@ -13,7 +13,7 @@ func main() {
 	groupie.Isfetched = groupie.Fetch("artists")
 	groupie.Isfetched = groupie.Fetch("relation")
 	groupie.Uni()
-	fmt.Println(groupie.Fu)
+	// fmt.Println(groupie.Result.Aloo)
 	http.HandleFunc("/search", groupie.Search)
 	http.HandleFunc("/style/{file}", groupie.Style)
 	http.HandleFunc("/", groupie.Home)
