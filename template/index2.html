@@ -14,12 +14,13 @@
 
 <body id="backgraound">
     <div class="bk">
-        <h1 class="hr">{{.Tbn.Name}}</h1>
+        {{range .Tbn}}
+        <h1 class="hr">{{.Name}}</h1>
         <div class="bord">
 
             <div class="bord2">
                 <center>
-                    <img src="{{.Tbn.Image}}" alt="artist" class="ar">
+                    <img src="{{.Image}}" alt="artist" class="ar">
                 </center>
             </div>
 
@@ -27,7 +28,7 @@
                 <details>
                     <summary class="members">members</summary>
                     <ul>
-                        {{range .Tbn.Members}}
+                        {{range .Members}}
                         <li>{{.}}</li>
                         {{end}}
                     </ul>
@@ -37,7 +38,7 @@
                     <summary class="members">creationDates</summary>
                     <ul>
 
-                        <li>{{.Tbn.CreationDate}}</li>
+                        <li>{{.CreationDate}}</li>
 
                     </ul>
 
@@ -46,36 +47,38 @@
                 <details>
                     <summary class="members">firstAlbum</summary>
                     <ul>
-                        <li>{{.Tbn.FirstAlbum}}</li>
+                        <li>{{.FirstAlbum}}</li>
                     </ul>
                 </details>
-
+                {{end}}
+                {{range $location , $dates := .Mapi}}
                 <details>
                     <summary class="members">locations</summary>
                     <ul>
-                        {{range .Aloo.Index}}
-                        {{range $location , $dates := .Mapio}}
+
+
                         <li>{{$location}}</li>
-                        {{end}}
+
                     </ul>
                 </details>
 
                 <details>
                     <summary class="members">concertDates</summary>
                     <ul>
-                        {{range .Conc.Dates}}
+                        {{range $dates}}
                         <li>{{.}}</li>
                         {{end}}
                     </ul>
                 </details>
 
+
                 <details>
                     <summary class="members">relations</summary>
                     <ul>
-                        {{range $Key, $Values := .Rela.Relation}}
-                        <li>{{$Key}}
+
+                        <li>{{$location}}
                             <ul>
-                                {{range $Values}}
+                                {{range $dates}}
                                 <li>{{.}}</li>
                                 {{end}}
                             </ul>

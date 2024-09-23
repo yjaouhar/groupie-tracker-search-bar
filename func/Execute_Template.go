@@ -29,17 +29,17 @@ func ExecuteTemplate(temp *template.Template, s string, w http.ResponseWriter, i
 		w.WriteHeader(status)
 		temp.Execute(w, info)
 	} else {
-
+		//fmt.Println(Result.Tbn[status-1 : status])
 		Sus := jdak{
-			Tbn:  Result.Tbn[Id-1 : Id],
-			Aloo: Result.Aloo,
+			Tbn:  Result.Tbn[status-1 : status],
+			Mapi: Result.Aloo.Index[status-1].Mapio,
 		}
-
 		err = temp.Execute(&buf, Sus)
 		if err != nil {
+			
 			Error(w, http.StatusInternalServerError)
 			return
 		}
-		temp.Execute(w, Cards)
+		temp.Execute(w, Sus)
 	}
 }

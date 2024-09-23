@@ -69,11 +69,12 @@ type jdak struct {
 		
 	}
 
-	 Aloo struct {
+	Aloo struct {
 		Index []struct {
 			Mapio map[string][]string `json:"datesLocations"`
 		} `json:"index"`
 	}
+	Mapi map[string][]string 
 	
 	Mp map[string]interface{}
 }

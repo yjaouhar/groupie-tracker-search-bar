@@ -26,7 +26,6 @@ func ArtistInfo(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	// Clear existing relations in the Cards.Rela.Relation map
-	
 	// Execute the parsed template and write it to the response writer
-	ExecuteTemplate(temp, "", w, nil, 0)
+	ExecuteTemplate(temp, "", w, nil, IDa)
 }
