@@ -14,6 +14,6 @@ func main() {
 	http.HandleFunc("/style/{file}", groupie.Style)
 	http.HandleFunc("/", groupie.Home)
 	http.HandleFunc("/artist/{id}", groupie.ArtistInfo)
-	fmt.Println("http://localhost:8082")
-	log.Fatal(http.ListenAndServe(":8082", nil))
+	fmt.Println("http://localhost:8070")
+	log.Fatal(http.ListenAndServe(":8070", nil))
 }

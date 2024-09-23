@@ -15,9 +15,7 @@
 <body>
 
     <div class="H1">
-        <a href="/">
-            <h1 class="h1">Groupie-Tracker</h1>
-        </a>
+        <h1 class="h1"> <a href="/" class="h1">Groupie-Tracker</a></h1>
         <form action="/search">
             <input class="inp" name="art" list="art" placeholder="Search for an artist" required>
             <datalist id="art">
@@ -31,12 +29,8 @@
                 <option value="{{$key}}"> {{$key}} - {{$outerKey}} </option>
                 {{end}}
                 {{end}}
-
-
-
-
             </datalist>
-            <input class="serch" type="submit" value="🔍">
+            <input class="iconserch" type="submit" value="🔍">
         </form>
 
 
