@@ -10,6 +10,7 @@ import (
 
 func Search(w http.ResponseWriter, r *http.Request) {
 	Result.Mok = nil
+	//found := false
 	x := r.URL.Query().Get("art")
 	if x == "" {
 		Error(w, 400)
@@ -39,19 +40,31 @@ func Search(w http.ResponseWriter, r *http.Request) {
 				}
 			}
 			if !found {
-				for _, lo := range v.Loco {
-					if strings.Contains(strings.ToLower(lo), strings.ToLower(x)) {
+				for v, _ := range Result.Aloo.Index[i].Mapio {
+					if strings.Contains(strings.ToLower(v), strings.ToLower(x)) {
 						Result.Mok = append(Result.Mok, Result.Tbn[i])
 						break
 					}
 				}
 			}
+
 		}
 	}
+	// if !found {
+	// 	for i, lo := range Result.Aloo.Index {
+	// 		for v, _ := range lo.Mapio {
+	// 			if strings.Contains(strings.ToLower(v), strings.ToLower(x)) {
+	// 				Result.Mok = append(Result.Mok, Result.Tbn[i])
+	// 				break
+	// 			}
+	// 		}
+
+	// 	}
+	// }
 	if len(Result.Mok) == 0 {
-		Error(w,404)
+		Error(w, 404)
 		return
-	} 
+	}
 	temp, err := template.ParseFiles("template/index.html")
 	if err != nil {
 		Error(w, http.StatusInternalServerError)

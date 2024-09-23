@@ -15,27 +15,26 @@
 <body>
 
     <div class="H1">
-        <a href="/"> <h1 class="h1">Groupie-Tracker</h1></a>
+        <a href="/">
+            <h1 class="h1">Groupie-Tracker</h1>
+        </a>
         <form action="/search">
             <input class="inp" name="art" list="art" placeholder="Search for an artist" required>
             <datalist id="art">
                 {{range .Tbn}}
-                <option value="{{.Name}} - artist/band">{{.Name}} </option>
-                
-               
+                <option value="{{.Name}}">{{.Name}} - artist/band</option>
+
+
                 {{end}}
-                {{range .Aloo.Index}}
-                {{ range $key, $value := .Mapio }}
-                 <option value="{{$key}}"> {{$key}} </option>
-                 {{end}}
-                 {{end}}
-                 {{range .Tbn}}
-                <option value="{{.FirstAlbum}}"> {{.FirstAlbum}} - first album</option>
-                <option value="{{.CreationDate}}">{{.CreationDate}} - creation date</option>
+                {{range $outerKey, $outerValue := .Mp}}
+                {{ range $key, $innervalue := $outerValue }}
+                <option value="{{$key}}"> {{$key}} - {{$outerKey}} </option>
                 {{end}}
-                
-               
-               
+                {{end}}
+
+
+
+
             </datalist>
             <input class="serch" type="submit" value="🔍">
         </form>
