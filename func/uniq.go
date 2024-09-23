@@ -25,14 +25,14 @@ func Uni() {
 	}
 	Fu["member"] = p
 	p = make(map[string]bool)
-	Fu["creation date"] = p
-	p = make(map[string]bool)
 	for _, v := range Result.Tbn {
 		if !p[strconv.Itoa(v.CreationDate)] {
 			p[strconv.Itoa(v.CreationDate)] = true
 		}
 
 	}
+	Fu["creation date"] = p
+	p = make(map[string]bool)
 	for _, v := range Result.Tbn {
 
 		if !p[v.FirstAlbum] {
