@@ -22,11 +22,11 @@ func Search(w http.ResponseWriter, r *http.Request) {
 			Result.Mok = append(Result.Mok, Result.Tbn[i])
 			fmt.Println(v.Name)
 			continue
-		} else if strings.Contains(strings.ToLower(v.FirstAlbum), strings.ToLower(x)) && len(x)!= 4 {
+		} else if strings.Contains(strings.ToLower(v.FirstAlbum), strings.ToLower(x)) && len(x) != 4 {
 			Result.Mok = append(Result.Mok, Result.Tbn[i])
 			fmt.Println(v.FirstAlbum)
 			continue
-		} else if strings.Contains(strings.ToLower(strconv.Itoa(v.CreationDate)), strings.ToLower(x))  && len(x)== 4 {
+		} else if strings.Contains(strings.ToLower(strconv.Itoa(v.CreationDate)), strings.ToLower(x)) && len(x) == 4 {
 			Result.Mok = append(Result.Mok, Result.Tbn[i])
 			fmt.Println(v.CreationDate)
 			continue

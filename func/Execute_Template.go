@@ -29,7 +29,6 @@ func ExecuteTemplate(temp *template.Template, s string, w http.ResponseWriter, i
 		w.WriteHeader(status)
 		temp.Execute(w, info)
 	} else {
-		//fmt.Println(Result.Tbn[status-1 : status])
 		Sus := jdak{
 			Tbn:  Result.Tbn[status-1 : status],
 			Mapi: Result.Aloo.Index[status-1].Mapio,
